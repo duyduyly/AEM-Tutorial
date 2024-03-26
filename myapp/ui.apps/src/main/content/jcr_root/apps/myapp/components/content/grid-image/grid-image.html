@@ -1,0 +1,76 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+             data-sly-use.model="com.myapp.core.models.GridImageModel"
+             data-sly-list.item="${model.getCollection}">
+            <div class="col-sm-3">
+                <div class="card shadow-sm" data-bs-toggle="modal" data-bs-target="#${item.id}" style="min-height:250px;min-width:250px">
+                    <img class="bd-placeholder-img card-img-top p-2" height="250px" width="250px"
+                         style="border-radius: 5px; min-height:250px;min-width:250px"
+                         src="${item.imageTitle}">
+                    <div class="card-body acme-regular">
+                        <h2 class="card-text">${item.title}</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">${item.createdTime}</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="${item.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog" style="margin-top: 0px;">
+                        <div class="modal-content acme-regular" style="width: 100%;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">collection</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid" data-sly-list.item2="${item.imageGridList}">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                            <img src="${item2.horizontal1}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=""/>
+                                            <img src="${item2.vertical1}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=""/>
+                                        </div>
+
+                                        <div class="col-lg-3 mb-4 mb-lg-0">
+                                            <img src="${item2.vertical2}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=" "/>
+                                            <img src="${item2.horizontal2}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=""/>
+                                        </div>
+
+                                        <div class="col-lg-3 mb-4 mb-lg-0">
+                                            <img src="${item2.horizontal3}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=""/>
+                                            <img src="${item2.vertical3}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=" "/>
+                                        </div>
+
+                                        <div class="col-lg-3 mb-4 mb-lg-0">
+                                            <img src="${item2.vertical4}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=" "/>
+                                            <img src="${item2.horizontal4}"
+                                                 class="w-100 shadow-1-strong rounded mb-4"
+                                                 alt=""/>
+                                        </div>
+                                    </div>
+                                    <!-- Gallery -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

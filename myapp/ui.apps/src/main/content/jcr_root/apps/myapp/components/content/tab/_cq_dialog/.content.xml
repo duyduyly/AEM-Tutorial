@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Properties"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab1 jcr:primaryType="nt:unstructured" jcr:title="Tab 1"
+                          sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <id fieldLabel="id" jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                        </items>
+                    </tab1>
+                    <tab2 jcr:primaryType="nt:unstructured" jcr:title="Tab 2"
+                          sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <well-multifield
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/well"
+                                    fieldLabel="Books">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <mutiple-field jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                   composite="{Boolean}true"
+                                                   fieldDescription="Books Details"
+                                                   fieldLabel="Tab Details"
+                                                   required="{Boolean}false">
+                                        <field jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/coral/foundation/container"
+                                               emptyText="Card List"
+                                               name="./getCard">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <imageUrl
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Image Url"
+                                                        name="./imageUrl"/>
+                                                <name
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Name"
+                                                        name="./name"/>
+                                                <description
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                        fieldLabel="Description"
+                                                        name="./description"/>
+
+                                                <selectedPath
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="Select Path"
+                                                        name="./selectedPath"
+                                                        rootPath="/content"
+                                                        class="cq-dialog-dropdown-showhide"/>
+
+                                            </items>
+                                        </field>
+                                    </mutiple-field>
+                                </items>
+                            </well-multifield>
+                        </items>
+                    </tab2>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

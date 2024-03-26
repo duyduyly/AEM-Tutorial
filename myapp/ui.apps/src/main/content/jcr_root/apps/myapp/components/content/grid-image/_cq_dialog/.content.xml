@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Properties"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
+        <!--start collection List-->
+        <items jcr:primaryType="nt:unstructured">
+            <well-multifield
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/well"
+                    fieldLabel="Books">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <mutiple-field jcr:primaryType="nt:unstructured"
+                                   sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                   composite="{Boolean}true"
+                                   fieldDescription="Collection Image"
+                                   fieldLabel="Collection Image"
+                                   required="{Boolean}false">
+                        <field jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/coral/foundation/container"
+                               emptyText="Collection List"
+                               name="./getCollection">
+
+                            <!--grid list-->
+                            <items jcr:primaryType="nt:unstructured">
+                                <id
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Id"
+                                        name="./id"/>
+                                <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        name="./title"/>
+                                <imageTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Image Title"
+                                        name="./imageTitle"
+                                        rootPath="/content/dam/mylog"
+                                        class="cq-dialog-dropdown-showhide"/>
+                                <well-multifield
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/well"
+                                        fieldLabel="Books">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <mutiple-field jcr:primaryType="nt:unstructured"
+                                                       sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                       composite="{Boolean}true"
+                                                       fieldDescription="Collection Image"
+                                                       fieldLabel="Grid Image"
+                                                       required="{Boolean}false">
+                                            <field jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                   emptyText="Image Grids List"
+                                                   name="./getImageGridList">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <horizontal1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Horizontal 1"
+                                                            name="./horizontal1"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+                                                    <vertical1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Vertical 1"
+                                                            name="./vertical1"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+
+                                                    <horizontal2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Horizontal 2"
+                                                            name="./horizontal2"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+                                                    <vertical2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Vertical 2"
+                                                            name="./vertical2"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+
+                                                    <horizontal3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Horizontal 3"
+                                                            name="./horizontal3"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+                                                    <vertical3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Vertical 3"
+                                                            name="./vertical3"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+
+                                                    <horizontal4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Horizontal 4"
+                                                            name="./horizontal4"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+                                                    <vertical4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Vertical 4"
+                                                            name="./vertical4"
+                                                            rootPath="/content/dam/mylog"
+                                                            class="cq-dialog-dropdown-showhide"/>
+                                                </items>
+
+                                            </field>
+                                        </mutiple-field>
+                                    </items>
+                                </well-multifield>
+                            </items>
+                            <!--  end grid list -->
+                        </field>
+                    </mutiple-field>
+                </items>
+            </well-multifield>
+        </items>
+        <!-- end collection List-->
+
+    </content>
+</jcr:root>
