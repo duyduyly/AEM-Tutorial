@@ -1,3 +1,5 @@
 {
-  "&amp;copy; {0} My App Aem Tutorial Site. All rights reserved." : "&amp;copy; {0} My App Aem Tutorial Site. Tous droits réservés."
+  "&amp;copy; {0} My App Aem Tutorial Site. All rights reserved." : "&amp;copy; {0} My App Aem Tutorial Site. Tous droits réservés.",
+  "hello.text" : "te",
+  "hello.click-here" : "Cliquez ici"
 }
