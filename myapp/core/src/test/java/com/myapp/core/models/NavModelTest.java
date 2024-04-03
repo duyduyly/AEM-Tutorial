@@ -9,22 +9,32 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(AemContextExtension.class)
 class NavModelTest {
     private NavModel navModel;
-
     private Page page;
     private Resource resource;
 
+    private String name;
+    private String url;
+
     @BeforeEach
     public void setup(AemContext context) throws Exception {
+        name = "name";
+        url = "myapp/components/navModel";
 
+        Map<String, Object> map = new HashMap<>();
+        map.put("sling:resourceType", "myapp/components/navModel");
+        map.put("name", name);
+        map.put("url", url);
         // prepare a page with a test resource
         page = context.create().page("/content/mypage");
-        resource = context.create().resource(page, "name",
-                "sling:resourceType", "myapp/components/content/navModel");
+        resource = context.create().resource(page,"navModel", map);
 
         // create sling model
         navModel = resource.adaptTo(NavModel.class);
@@ -32,10 +42,13 @@ class NavModelTest {
 
     @Test
     void testGetMessage() throws Exception {
+        assertNotNull(navModel);
         // some very basic junit tests
-        String name = navModel.getName();
+        String nameEqual = navModel.getName();
+        String urlEqual = navModel.getUrl();
         assertNotNull(name);
-        assertTrue(StringUtils.contains(name, resource.getResourceType()));
-        assertTrue(StringUtils.contains(name, page.getPath()));
+        assertNotNull(url);
+        assertEquals(nameEqual, name);
+        assertEquals(urlEqual, url);
     }
 }

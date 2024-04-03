@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = Resource.class,cache = true, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class NavModel {
 
     @ValueMapValue

@@ -13,6 +13,10 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='myapp.hello'}"/>
+</sly>
 <div class="cmp-helloworld" data-cmp-is="helloworld">
     <h2 class="cmp-helloworld__title">Hello World Component</h2>
     <div class="cmp-helloworld__item" data-sly-test="${properties.text}">
@@ -24,7 +28,38 @@
         <pre class="cmp-helloworld__item-output"data-cmp-hook-helloworld="model">${model.message}</pre>
     </div>
 
+    <div class="demo">
+        Demo
+    </div>
+
     <div>
         ${'hello.click-here' @ i18n}
     </div>
+
+
+<!--    can get properties or model-->
+    <div data-sly-text="${properties.text}">text</div>
+
+    <!--    can Test properties or model-->
+    <div data-sly-test="${properties.text}">text test</div>
+
+<!--    repeat--> <p>Repeat: </p>
+    <ul data-sly-repeat="${currentPage.listChildren}">
+        <li>${item.name}</li>
+    </ul>
+
+
+<!--    list--><p>list: </p>
+    <ul data-sly-list.item="${currentPage.listChildren}">
+        <li>${item.name}</li>
+    </ul>
+
+<!--    get tag from other html-->
+    <div data-sly-include="helloworld1.html"></div>
+
+<!--    get resource-->
+    <div data-sly-resource="${'container' @resourceType='myapp/components/container'}"/>
+
+
+
 </div>
